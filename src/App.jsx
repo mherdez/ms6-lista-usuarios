@@ -50,14 +50,31 @@ const App = () => {
   const { first_name, last_name, avatar, email } = usuarios[2];//desestructuracion
 
   return (
-    <div className='container'>
-      <h1>Lista de Usuarios</h1>
-      <div className="card">
-        <h2 className='card-name'> {first_name} {last_name}  </h2>
-        <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
-        <p className='card-email'>{email}</p>
-      </div>
-    </div>
+      <>
+        <h1 className='title'>Lista de Usuarios</h1>
+          <div className='container'>
+            <div className="card">
+              <h2 className='card-name'> {first_name} {last_name}  </h2>
+              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
+              <p className='card-email'>{email}</p>
+            </div>
+            <div className="card">
+              <h2 className='card-name'> {first_name} {last_name}  </h2>
+              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
+              <p className='card-email'>{email}</p>
+            </div>
+            <div className="card">
+              <h2 className='card-name'> {first_name} {last_name}  </h2>
+              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
+              <p className='card-email'>{email}</p>
+            </div>
+            <div className="card">
+              <h2 className='card-name'> {first_name} {last_name}  </h2>
+              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
+              <p className='card-email'>{email}</p>
+            </div>
+          </div>
+      </>
   );
 };
 

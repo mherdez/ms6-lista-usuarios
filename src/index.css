@@ -17,10 +17,12 @@
 body {
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
+  width: 100vw;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 h1 {
