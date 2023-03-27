@@ -5,5 +5,5 @@ import './index.css'
 import Intro from './Intro'
 
 ReactDOM.createRoot(document.querySelector('#root')).render(
-    <Intro texto='hola amigos' />
+    <App />
 )
