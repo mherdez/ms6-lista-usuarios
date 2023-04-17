@@ -31,50 +31,25 @@ const App = () => {
       "last_name": "Fields",
       "avatar": "https://reqres.in/img/faces/10-image.jpg"
     },
-    {
-      "id": 11,
-      "email": "george.edwards@reqres.in",
-      "first_name": "George",
-      "last_name": "Edwards",
-      "avatar": "https://reqres.in/img/faces/11-image.jpg"
-    },
-    {
-      "id": 12,
-      "email": "rachel.howell@reqres.in",
-      "first_name": "Rachel",
-      "last_name": "Howell",
-      "avatar": "https://reqres.in/img/faces/12-image.jpg"
-    }
   ];
 
-  const { first_name, last_name, avatar, email } = usuarios[2];//desestructuracion
-
   return (
-      <>
-        <h1 className='title'>Lista de Usuarios</h1>
-          <div className='container'>
+    <>
+      <h1 className='title'>Lista de Usuarios</h1>
+      <div className='container'>
+        {usuarios.map(usuario => {
+          const { first_name, last_name, avatar, email } = usuario;
+          return (
             <div className="card">
               <h2 className='card-name'> {first_name} {last_name}  </h2>
-              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
+              <img className='card-photo' src={avatar} alt={first_name} />
               <p className='card-email'>{email}</p>
             </div>
-            <div className="card">
-              <h2 className='card-name'> {first_name} {last_name}  </h2>
-              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
-              <p className='card-email'>{email}</p>
-            </div>
-            <div className="card">
-              <h2 className='card-name'> {first_name} {last_name}  </h2>
-              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
-              <p className='card-email'>{email}</p>
-            </div>
-            <div className="card">
-              <h2 className='card-name'> {first_name} {last_name}  </h2>
-              <img className='card-photo' src={avatar} alt={first_name} title={first_name + " " + last_name} />
-              <p className='card-email'>{email}</p>
-            </div>
-          </div>
-      </>
+          );
+        })}
+
+      </div>
+    </>
   );
 };
 
