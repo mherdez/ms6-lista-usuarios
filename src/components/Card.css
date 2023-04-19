@@ -2,9 +2,9 @@
 .imagen-modificada {
   border-radius: 50%;
 }
-.opacidad {
-  opacity: .2;
+.grande {
+  width: 200px;
 }
-.borde {
-  border: 3px solid yellow;
+.chica {
+  width: 100px;
 }
