@@ -6,7 +6,7 @@ export const usuarios = [
     "first_name": "Michael",
     "last_name": "Lawson",
     "avatar": "https://reqres.in/img/faces/7-image.jpg",
-    "size": 'grande',
+    "size": '',
   },
   {
     "id": 8,
@@ -30,7 +30,7 @@ export const usuarios = [
     "first_name": "Byron",
     "last_name": "Fields",
     "avatar": "https://reqres.in/img/faces/10-image.jpg",
-    "size": 'chica',
+    "size": '',
   },
   {
     "id": 11,
@@ -46,6 +46,6 @@ export const usuarios = [
     "first_name": "Rachel",
     "last_name": "Howell",
     "avatar": "https://reqres.in/img/faces/2-image.jpg",
-    "size": 'grande',
+    "size": '',
   }
 ];

@@ -1,10 +1,27 @@
 
 .imagen-modificada {
-  border-radius: 50%;
+  opacity: 0.2;
 }
 .grande {
   width: 200px;
 }
 .chica {
   width: 100px;
+}
+.card {
+  border: 2px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card-name {
+
+}
+.card-photo {
+  border-radius: 50%;
+}
+.card-email {
+  font-size: 32px;
+  font-weight: bold;
 }

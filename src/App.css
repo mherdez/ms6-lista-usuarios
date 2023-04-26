@@ -8,19 +8,3 @@
   width: 80vw;
   margin: 0 auto;
 }
-.card {
-  border: 2px solid yellow;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.card-name {
-
-}
-.card-photo {
-
-}
-.card-email {
-
-}
