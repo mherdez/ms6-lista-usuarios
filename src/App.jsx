@@ -12,9 +12,10 @@ const App = () => {
       <div className='container'>
         {/* {usuarios.map(usuario => <Card key={usuario.id} usuario={usuario} />)} */}
         {/* <Card usuario={firstUser} /> */}
-        <Card usuario={usuarios[0]} size={'grande'} />
+        {/* <Card usuario={usuarios[0]} size={'grande'} />
         <Card usuario={usuarios[2]} />
-        <Card usuario={usuarios[4]} size={'chica'}/>
+        <Card usuario={usuarios[4]} size={'chica'}/> */}
+        <Contador />
       </div>
     </>
   );

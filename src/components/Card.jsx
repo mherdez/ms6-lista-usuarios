@@ -1,11 +1,10 @@
 import './Card.css';
 
-const Card = ({ usuario, size = 'normal' }) => {
+const Card = ({ usuario }) => {
 
-  const activado = false;
+  const activado = true;
 
-  console.log(size)
-  const { first_name, last_name, avatar, email } = usuario;
+  const { first_name, last_name, avatar, email, size } = usuario;
 
   // EVENTOS: Click
   const handdleClick = (e) => {
