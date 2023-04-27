@@ -3,7 +3,11 @@ import './Card.css';
 
 const Card = ({ usuario }) => {
 
-  const { first_name, last_name, avatar, email, size } = usuario;
+  console.log( usuario )
+  // const { first_name, last_name, avatar, email, size } = usuario;
+  const { name, email, picture } = usuario;
+  const { first, last } = name;
+  const { large } = picture;
 
   const [status, setStatus] = useState(true)
 
@@ -15,11 +19,11 @@ const Card = ({ usuario }) => {
 
   return (
     <div className="card">
-      <h2 className='card-name'> {first_name} {last_name}  </h2>
+      <h2 className='card-name'> {first} {last}  </h2>
       <img
         className={ 'card-photo' }
-        src={avatar}
-        alt={first_name}
+        src={large}
+        alt={first}
         onClick={handdleClick}
       />
       <p className='card-email'>{ status ? 'Activo' : 'Suspendido' }</p>
