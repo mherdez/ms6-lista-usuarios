@@ -23,6 +23,11 @@ const Todo = () => {
     setInput(e.target.value)
   }
 
+  // añade tarea cuando pulsamos Enter en el inputs
+  const enter = (e) => {
+    if( e.keyCode === 13 ) handleClick()
+  }
+
   // añadir nueva tarea a la lista de tareas
   const handleClick = () => {
     setTodos([{id: Date.now(), task: input, completed: false}, ...todos])
@@ -45,29 +50,70 @@ const Todo = () => {
   }
 
   return (
-    <main className='text-center'>
-      <h1>ToDo divst</h1>
+    <main className='text-center container-sm w-50 mt-5 '>
+      <h1>ToDo List</h1>
       <input
         type="text"
-        className='form-control'
+        className='form-control my-4 fs-3 shadow'
         onChange={getInput}
         value={input}
+        onKeyDown={enter}
       />
 
-      <button className='btn btn-primary' onClick={handleClick}>Añadir tarea</button>
+      <button
+        className='btn btn-primary me-3 shadow'
+        onClick={handleClick}
+      >
+        Añadir tarea
+      </button>
 
-      <button className='btn btn-danger' onClick={handleDelete}>Borrar completadas</button>
-      <div>
-        {todos.map( (todo, index) =>
-        <p
-          key={index}
-          onClick={() => cambiarTarea(todo.id)}
-          className={todo.completed ? 'text-danger text-decoration-line-through' : 'text-success'}
-        >
-          {todo.task}
-        </p
-        >)}
-      </div>
+      <button
+        className='btn
+        btn-danger
+        shadow'
+        onClick={handleDelete}
+      >
+        Borrar completadas
+      </button>
+
+      {/* Escondemos la tabla cuando la lista esta vacia */}
+      { todos.length > 0
+      ? <>
+        <table className="table table-striped my-5">
+        <thead>
+          <tr>
+            <th scope="col" className='fs-4'>Lista de Tareas</th>
+          </tr>
+        </thead>
+        <tbody className='shadow'>
+          {
+            todos.map( (todo, index) =>
+              <tr key={index}>
+                <td
+                  className={ todo.completed
+                              ? 'fs-4 text-start p-3 table-secondary text-decoration-line-through text-secondary'
+                              : 'fs-4 text-start p-3'}
+                  onClick={() => cambiarTarea(todo.id)}
+                >
+                  {todo.task}
+                </td>
+              </tr>
+              )
+          }
+        </tbody>
+      </table>
+      <table className='table'>
+        <tdbody>
+          <tr className='table-secondary'>
+            <td className='text-primary col-2'>Total de tareas: <span className='fw-bold'>{todos.length}</span></td>
+            <td className='text-success col-2'>Tareas completadas: <span className='fw-bold '>{todos.filter( item => item.completed).length}</span></td>
+            <td className='text-danger col-2'>Tareas pendientes: <span className='fw-bold '>{todos.filter( item => !item.completed).length}</span></td>
+          </tr>
+        </tdbody>
+      </table>
+      </>
+      : ''
+    }
     </main>
   );
 };
