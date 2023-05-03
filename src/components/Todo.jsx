@@ -11,6 +11,7 @@ cualquier lenguaje:
 
 */
 
+// TODO: Implementar el localStorage para no perder la informacion al recargar la pagina
 
 const Todo = () => {
 
@@ -23,13 +24,14 @@ const Todo = () => {
     setInput(e.target.value)
   }
 
-  // añade tarea cuando pulsamos Enter en el inputs
+  // añade tarea cuando pulsamos Enter en el input
   const enter = (e) => {
     if( e.keyCode === 13 ) handleClick()
   }
 
   // añadir nueva tarea a la lista de tareas
   const handleClick = () => {
+    if( input.trim().length == 0) return // valida si hay informacion en el input
     setTodos([{id: Date.now(), task: input, completed: false}, ...todos])
     setInput('')
   }
