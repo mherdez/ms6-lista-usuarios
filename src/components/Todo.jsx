@@ -93,11 +93,16 @@ const Todo = () => {
               <tr key={index}>
                 <td
                   className={ todo.completed
-                              ? 'fs-4 text-start p-3 table-secondary text-decoration-line-through text-secondary'
+                              ? 'fs-4 text-start p-3 table-secondary  text-secondary'
                               : 'fs-4 text-start p-3'}
                   onClick={() => cambiarTarea(todo.id)}
                 >
-                  {todo.task}
+                  {todo.completed ? '✔️ ': ''}
+                  <span className={
+                    todo.completed ? 'text-decoration-line-through mx-2'
+                    : ' mx-2'
+                  }
+                  >{todo.task}</span>
                 </td>
               </tr>
               )
